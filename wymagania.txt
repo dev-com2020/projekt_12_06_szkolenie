@@ -1,0 +1,9 @@
+ecdsa==0.18.0
+hdwallet==2.2.1
+mnemonic==0.20
+mpmath==1.3.0
+pycryptodome==3.18.0
+six==1.16.0
+sympy==1.12
+
+
