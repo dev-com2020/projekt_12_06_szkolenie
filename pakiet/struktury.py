@@ -79,5 +79,24 @@ slownik['wzrost'] = 180
 slownik['wzrost'] = 280
 print(slownik)
 
-del slownik['wzrost']
-print(slownik)
+# del slownik['wzrost']
+# print(slownik)
+
+print(slownik.get('wzrost', 'brak danych'))
+
+lotek = [34, 23, 11, 47, 33, 44, 34, 23, 11]
+lotek2 = [47, 33, 44, 34, 11]
+print(lotek)
+lotek_set = set(lotek)
+lotek_set2 = set(lotek2)
+print(lotek_set)
+print(lotek_set2)
+print(lotek_set.intersection(lotek_set2))
+print(lotek_set.union(lotek_set2))
+print(lotek_set.difference(lotek_set2))
+print(lotek_set.symmetric_difference(lotek_set2))
+lote_set3 = lotek_set.copy()
+lote_set3.add(100)
+lote_set3.remove(11)
+print(lote_set3)
+print(lotek_set)
