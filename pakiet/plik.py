@@ -51,6 +51,7 @@ def response_status(status_code: int) -> str:
     else:
         return "Unknown"
 
+
 def response_status310(status_code):
     x = 200
     match status_code:
@@ -70,5 +71,3 @@ print(response_status("Tomek"))
 
 print(response_status310("Tomek"))
 print(response_status310(404))
-
-
