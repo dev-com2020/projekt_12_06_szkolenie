@@ -43,13 +43,16 @@ def print_args(*args, **kwargs):
 
 
 def srednia(*args):
-    return sum(args) / len(args)
+    try:
+        return sum(args) / len(args)
+    except (ZeroDivisionError, TypeError, ValueError):
+        return 0
 
 
 print_args(1, 2, 3, 4, 5, a=10, b=20, c=30)
 print_args()
-# wynik = srednia()
-# print(wynik)
+wynik = srednia()
+print(wynik)
 
 kwadrat = [x ** 2 for x in range(10) if x % 2 == 0]
 print(kwadrat)
