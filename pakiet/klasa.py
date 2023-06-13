@@ -14,6 +14,7 @@ class Dom(ABC):
     def pokaz_ilosc_okien(self):
         pass
 
+
 class Dom2(Dom):
 
     def __init__(self, metraz, ilosc_okien=5, ilosc_drzwi=2, ilosc_pieter=1):
@@ -28,6 +29,7 @@ class Dom2(Dom):
     def pokaz_ilosc_okien(self):
         print(f'Ilosc okien: {self.__ilosc_okien}')
 
+
 class Dom3(Dom2):
     def __init__(self, metraz, ilosc_okien=5, ilosc_drzwi=2, ilosc_pieter=1, kolor_elewacji='szary'):
         super().__init__(metraz, ilosc_okien, ilosc_drzwi, ilosc_pieter)
@@ -37,8 +39,12 @@ class Dom3(Dom2):
         print(f'Metraz: {self.metraz}')
         print(f'Kolor elewacji: {self.kolor_elewacji}')
 
-    def pokaz_kolor(self):
+    def __ustaw_kolor(self, kolor):
+        self.kolor_elewacji = kolor
+
+    def pokaz_kolor(self, kolor):
         print(f'Kolor elewacji: {self.kolor_elewacji}')
+        self.__ustaw_kolor(kolor)
 
 
 
@@ -46,9 +52,10 @@ class Dom3(Dom2):
 dom2 = Dom2(300)
 dom2.pokaz_metraz()
 dom3 = Dom3(400)
+dom3.pokaz_kolor('czerwony')
 dom3.pokaz_metraz()
-dom3.pokaz_kolor()
 dom3.ilosc_okien = "nie ma okien"
 dom3.ilosc_okien = 10
 dom3.pokaz_ilosc_okien()
+
 print((Dom3).mro())
