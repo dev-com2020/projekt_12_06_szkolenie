@@ -30,7 +30,7 @@ print(multi2(2, 2))
 
 def check_age(users, age):
     count = 0
-    for user in users:
+    for i, user in enumerate(users):
         try:
             if int(user['age']) < age:
                 count += 1
@@ -38,6 +38,10 @@ def check_age(users, age):
             logging.warning(f'Brak klucza age: {user}')
         except ValueError:
             logging.warning(f'Wartość age nie jest liczbą: {user}')
+        else:
+            print(f'Wiek {user["name"]} jest ok')
+        finally:
+            print(f'{i}-{user}')
     return count
 
 
